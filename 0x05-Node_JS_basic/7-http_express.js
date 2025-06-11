@@ -39,7 +39,7 @@ app.get('/students', async (req, res) => {
       responseText += `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`;
     }
 
-    res.send(responseText.trim());
+    res.send(responseText);
   } catch (err) {
     res.send('Cannot load the database');
   }
