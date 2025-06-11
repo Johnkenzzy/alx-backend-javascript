@@ -44,7 +44,7 @@ const app = http.createServer((req, res) => {
 
           res.write(`Number of students: ${total}\n`);
           for (const [field, names] of Object.entries(fieldGroups)) {
-            res.write(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+            res.write(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`);
           }
           res.end();
         });
