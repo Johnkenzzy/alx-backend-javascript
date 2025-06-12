@@ -1,0 +1,30 @@
+{
+  "name": "unittest_in_js",
+  "version": "1.0.0",
+  "description": "Hands-on unittest in JavaScript using Mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "alx-backend-javascript"
+  },
+  "keywords": [
+    "mocha",
+    "chai",
+    "sinon",
+    "express",
+    "unittest",
+    "integration_test",
+    "spies",
+    "stubs",
+    "node",
+    "request"
+  ],
+  "author": "Johnkennedy Umeh <johnkenumeh@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
+}
