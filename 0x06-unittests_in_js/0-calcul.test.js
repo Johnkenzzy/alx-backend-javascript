@@ -4,6 +4,13 @@ const calculateNumber = require('./0-calcul.js');
 describe('calculateNumber', () => {
   it('should return sum of two integers', () => {
     assert.strictEqual(calculateNumber(3, 4), 7);
+    assert.strictEqual(calculateNumber(' 4 ', '5'), 9);
+    assert.strictEqual(calculateNumber('1e2', '3e1'), 130);
+  });
+
+  it('should handle negative numbers', () => {
+    assert.strictEqual(calculateNumber(-5, -10), -15);
+    assert.strictEqual(calculateNumber(10, -3), 7);
   });
 
   it('should return sum when one argument is a numeric string', () => {
@@ -49,5 +56,33 @@ describe('calculateNumber', () => {
 
   it('should treat empty array as 0', () => {
     assert.strictEqual(calculateNumber([], 3), 3);
+    assert.strictEqual(calculateNumber([], []), 0);
+  });
+
+  it('should return NaN for Symbol input', () => {
+    try {
+      calculateNumber(Symbol(), 1);
+    } catch (err) {
+      assert.strictEqual(err instanceof TypeError, true);
+    }
+  });
+
+  it('should handle Infinity and -Infinity', () => {
+    assert.strictEqual(calculateNumber(Infinity, 1), Infinity);
+    assert.strictEqual(calculateNumber(-Infinity, 1), -Infinity);
+  });
+
+  it('should handle missing arguments', () => {
+    assert.ok(isNaN(calculateNumber(5)));
+    assert.ok(isNaN(calculateNumber()));
+  });
+
+  it('should handle boolean values', () => {
+    assert.strictEqual(calculateNumber(true, false), 1);
+    assert.strictEqual(calculateNumber(true, true), 2);
+  });
+
+  it('should handle very large numbers', () => {
+    assert.strictEqual(calculateNumber(1e308, 1e308), Infinity);
   });
 });
