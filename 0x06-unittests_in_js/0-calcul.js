@@ -1,1 +1,1 @@
-module.exports = function calculateNumber(a, b) {return (Number(a) + Number(b))};
+module.exports = function calculateNumber(a, b) {return (Math.round(a) + Math.round(b))};
