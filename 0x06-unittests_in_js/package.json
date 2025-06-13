@@ -25,6 +25,7 @@
   "author": "Johnkennedy Umeh <johnkenumeh@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.3.10",
     "mocha": "^9.2.2"
   },
   "dependencies": {}
