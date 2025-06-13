@@ -29,6 +29,6 @@
     "mocha": "^9.2.2"
   },
   "dependencies": {
-    "sinon": "^13.0.2"
+    "sinon": "^12.0.1"
   }
 }
