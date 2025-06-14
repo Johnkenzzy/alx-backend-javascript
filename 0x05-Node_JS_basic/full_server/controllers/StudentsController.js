@@ -1,4 +1,4 @@
-import { readDatabase } from '../utils';
+const readDatabase = require('../utils');
 
 class StudentsController {
   static async getAllStudents(req, res) {
@@ -8,7 +8,9 @@ class StudentsController {
       const data = await readDatabase(path);
       let response = 'This is the list of our students';
 
-      const sortedFields = Object.keys(data).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+      const sortedFields = Object
+        .keys(data)
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
       for (const field of sortedFields) {
         const names = data[field];
@@ -46,4 +48,4 @@ class StudentsController {
   }
 }
 
-export default StudentsController;
+module.exports = StudentsController;
